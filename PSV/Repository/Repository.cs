@@ -67,7 +67,7 @@ namespace PSV.Repository
             throw new NotImplementedException();
         }
 
-        public PageResponse<TEntity> GetPage(Pager pager)
+        public virtual PageResponse<TEntity> GetPage(Pager pager)
         {
             throw new NotImplementedException();
         }

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "QQehSuEMSTN0XagX21DKqnV5Jarf2lTZ7HeBGQJKLwfIslFfyctTGVunpcm2FKzY5GXeV1l0bXtx82q/pxM6dA==",
+  "dgSpecHash": "lDb4jmdcHkOPxhC4+nxa7I6/tddCPhavF0q+9MQY6mqZNRj6JM9RCJL5JMLg2NLRuWf8EcIZ6K99v9hHSAUraw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Borisa\\Desktop\\PSV\\PSV\\PSV.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Borisa\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Borisa\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Borisa\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.10\\microsoft.aspnetcore.authentication.jwtbearer.3.1.10.nupkg.sha512",
     "C:\\Users\\Borisa\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Borisa\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\Borisa\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
