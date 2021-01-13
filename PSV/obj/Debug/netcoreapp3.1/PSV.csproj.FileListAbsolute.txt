@@ -70,3 +70,4 @@ C:\Users\Borisa\Desktop\PSV\PSV\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\
 C:\Users\Borisa\Desktop\PSV\PSV\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Borisa\Desktop\PSV\PSV\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\Borisa\Desktop\PSV\PSV\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Borisa\Desktop\PSV\PSV\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

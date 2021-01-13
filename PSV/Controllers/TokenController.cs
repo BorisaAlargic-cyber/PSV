@@ -66,8 +66,8 @@ namespace PSV.Controllers
             var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(configuration["Jwt:Issuer"], configuration["Jwt:Audience"], claims, expires: DateTime.UtcNow.AddDays(1), signingCredentials: signIn);
-
-            return Ok(new JwtSecurityTokenHandler().WriteToken(token));
+            string tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+            return Ok(new { tokenString });
         }
 
     }

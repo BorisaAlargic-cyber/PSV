@@ -22,7 +22,7 @@ namespace PSV.Controllers
             {
                 using (var unitOfWork = new UnitOfWork(new ModelContext()))
                 {
-                    return unitOfWork.Feedback.GetPage(new Pager(page, perPage, search))
+                    return unitOfWork.Feedback.GetPage(new Pager(page, perPage, search));
                 }
             }
             catch (Exception e)
@@ -102,6 +102,6 @@ namespace PSV.Controllers
             return Ok(feedback);
         }
 
-        public
+        
     }
 }

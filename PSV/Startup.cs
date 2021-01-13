@@ -42,8 +42,6 @@ namespace PSV
                     ValidIssuer = Configuration["Jwt:Issue"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                 };
-
-
             });
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
