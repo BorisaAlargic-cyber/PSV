@@ -16,4 +16,16 @@ export class UserService {
     getUser() {
         return this.http.get(this.baseUrl + '/api/users/get-current');
     }
+
+    getAllUsers(){
+        return this.http.get(this.baseUrl + '/api/users/get-all');
+    }
+    
+    blockUser(email){
+        return this.http.post(this.baseUrl + '/api/users/block/' + email);
+    }
+
+    unBlockUser(email){
+        return this.http.post(this.baseUrl + '/api/users/unblock/' + email);
+    }
 }

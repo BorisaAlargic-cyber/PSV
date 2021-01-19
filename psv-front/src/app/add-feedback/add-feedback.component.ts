@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FeedBackService } from '../services/feedbackService';
 
 @Component({
   selector: 'app-add-feedback',
@@ -10,7 +12,7 @@ export class AddFeedbackComponent implements OnInit {
 
   addFeedbackForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private feedbackService: FeedBackService, private router: Router) { }
 
   ngOnInit(): void {
     this.addFeedbackForm = this.formBuilder.group({
@@ -24,6 +26,11 @@ export class AddFeedbackComponent implements OnInit {
       return;
     }
 
-    console.log(this.addFeedbackForm.value);
+    this.feedbackService.addFeedback(this.addFeedbackForm.value).subscribe(data => {
+      
+      this.router.navigate(['/feedback']);
+    });
+
+    
   }
 }

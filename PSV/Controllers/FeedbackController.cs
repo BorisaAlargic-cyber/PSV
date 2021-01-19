@@ -49,7 +49,7 @@ namespace PSV.Controllers
             }
         }
 
-        [Route("/api/feedbacks")]
+        [Route("/api/feedbacks/{id}")]
         [HttpPut]
         public async Task<IActionResult> Publish(int id)
         {
@@ -72,6 +72,28 @@ namespace PSV.Controllers
             return Ok(feedback);
         }
 
+        [Route("/api/feedbacks/dontPublish/{id}")]
+        [HttpPut]
+
+        public async Task<IActionResult> DontPublish(int id)
+        {
+            Feedback feedback = null;
+            try
+            {
+                using(var unitOfWork = new UnitOfWork(new ModelContext()))
+                {
+                    feedback = unitOfWork.Feedback.Get(id);
+                    feedback.Published = false;
+                    unitOfWork.Complete();
+                }
+            }catch(Exception e)
+            {
+                return BadRequest();
+            }
+
+            return Ok(feedback);
+        }
+
         [Route("/api/feedbacks")]
         [HttpPost]
         public async Task<IActionResult>  CreateFeedback (Feedback input)
@@ -87,7 +109,8 @@ namespace PSV.Controllers
             feedback.Comment = input.Comment;
             feedback.Published = false;
             feedback.Deleted = false;
-            feedback.Patient = GetCurrentUser();
+            User user = GetCurrentUser();
+            feedback.Patient = user;
             try 
             {
                 using (var unitOfWork = new UnitOfWork(new ModelContext()))

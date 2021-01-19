@@ -19,7 +19,7 @@ namespace PSV.Model
         public Pager(int page, int perPage, string search)
         {
             this.page = page;
-            this.perPage = perPage;
+            this.perPage = perPage > 0 ? perPage : 20;
             this.search = search;
         }
 

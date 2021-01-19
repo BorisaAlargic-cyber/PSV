@@ -5,13 +5,16 @@ import { AppComponent } from './app.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { UserListComponent } from './user-list/user-list.component';
+
 
 const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'add-feedback', component: AddFeedbackComponent },
-  { path: 'feedback', component: FeedbackComponent }
+  { path: 'feedback', component: FeedbackComponent },
+  { path: 'users', component: UserListComponent}
 ];
 
 @NgModule({

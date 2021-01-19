@@ -15,9 +15,12 @@ import { MatCardModule } from '@angular/material/card';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { AddFeedbackComponent } from './add-feedback/add-feedback.component'
 import { MatTableModule } from '@angular/material/table'
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserService } from './services/userService';
 import { TokenService } from './services/tokenService';
+import { FeedBackService } from './services/feedbackService';
+import { TokenInterceptor } from './services/tokenInterceptor';
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { TokenService } from './services/tokenService';
     LoginComponent,
     RegistrationComponent,
     FeedbackComponent,
-    AddFeedbackComponent
+    AddFeedbackComponent,
+    UserListComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,9 @@ import { TokenService } from './services/tokenService';
     MatTableModule,
     HttpClientModule
   ],
-  providers: [UserService, TokenService],
+  providers: [UserService, TokenService, FeedBackService,
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

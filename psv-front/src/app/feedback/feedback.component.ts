@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FeedBackService } from '../services/feedbackService';
 
 export interface Feedback {
   user: string,
@@ -12,16 +13,33 @@ export interface Feedback {
 })
 export class FeedbackComponent implements OnInit {
 
-  elements: Feedback[] = [
-    { user: 'test1@gmail.com', comment: 'Comment 1'},
-    { user: 'test2@gmail.com', comment: 'Comment 2'},
-    { user: 'test3@gmail.com', comment: 'Comment 3'}
-  ]
-  displayedColumns: string[] = ['user', 'comment']
+  elements: Feedback[] = []
+  displayedColumns: string[] = ['user', 'comment' , 'published']
 
-  constructor() { }
+
+
+  constructor(private feedbackService: FeedBackService) { }
 
   ngOnInit(): void {
+    this.feedbackService.getAllFeedback().subscribe(data => {
+      this.elements = data['entities'];
+      console.log(data);
+      
+    });
+  }
+  putFeedback(event,element){
+    this.feedbackService.putFeedback(element.id).subscribe(data =>{
+      this.ngOnInit();
+    })
+  }
+  
+  dontPublish(event,element){
+    this.feedbackService.dontPublish(element.id).subscribe(data =>{
+      this.ngOnInit();
+    })
   }
 
-}
+    
+  }
+
+

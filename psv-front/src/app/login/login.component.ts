@@ -26,14 +26,11 @@ export class LoginComponent implements OnInit {
 
   submit() {
 
-    console.log(this.loginForm.valid);
-
     if (!this.loginForm.valid) {
       return;
     }
 
       this.tokenService.token(this.loginForm.value).subscribe((data) =>  {
-        console.log(data)
         localStorage.setItem('token', JSON.stringify(data));
         
         this.userService.getUser().subscribe((data) => {

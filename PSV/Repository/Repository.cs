@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 using PSV.Core;
 using PSV.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
@@ -57,6 +57,7 @@ namespace PSV.Repository
         public void Update(TEntity entity)
         {
             Context.Set<TEntity>().Attach(entity);
+            Context.Entry(entity).State = EntityState.Modified;
         }
         public virtual IEnumerable<TEntity> GetAll()
         {

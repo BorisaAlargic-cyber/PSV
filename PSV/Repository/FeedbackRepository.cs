@@ -13,14 +13,14 @@ namespace PSV.Repository
 
         public override PageResponse<Feedback> GetPage(Pager pager)
         {
-            var query = ModelContext.Feedbacks.Where(x => (x.Deleted == false && (x.Comment.Contains(pager.Search))));
+            var query = ModelContext.Feedbacks.Include("Patient").Where(x => (x.Deleted == false)).OrderBy(x => x.Id);
 
             return new PageResponse<Feedback>(query.Skip(pager.Page).Take(pager.PerPage).ToList(), query.Count());
         }
 
         public PageResponse<Feedback> GetPagePublished(Pager pager)
         {
-            var query = ModelContext.Feedbacks.Where(x => (x.Deleted == false && (x.Published == true)));
+            var query = ModelContext.Feedbacks.Where(x => (x.Deleted == false && (x.Published == true))).OrderBy(x => x.Id);
 
             return new PageResponse<Feedback>(query.Skip(pager.Page).Take(pager.PerPage).ToList(), query.Count());
         }

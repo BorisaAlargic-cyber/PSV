@@ -9,7 +9,26 @@ export class FeedBackService
 
     constructor(private http: HttpClient) { }
 
-    feedback(data) {
-        return this.http.post(this.baseUrl + '/api/feedback', data);
+    addFeedback(data) {
+
+        return this.http.post(this.baseUrl + '/api/feedbacks', data);
+    }
+
+    getAllFeedback() {
+        return this.http.get(this.baseUrl + '/api/feedbacks/all');
+
+    }
+
+    getPublishedFeedback () {
+        return this.http.get(this.baseUrl + '/api/feedbacks/all-published');
+
+    }
+
+    putFeedback(id) {
+        return this.http.put(this.baseUrl + '/api/feedbacks/' + id, {});
+    }
+
+    dontPublish(id){
+        return this.http.put(this.baseUrl + '/api/feedbacks/dontPublish/' + id , {});
     }
 }

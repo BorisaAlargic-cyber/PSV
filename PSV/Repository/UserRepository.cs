@@ -20,5 +20,12 @@ namespace PSV.Repository
         {
             return ModelContext.Users.Where(x => x.Email == email && x.Password == password).FirstOrDefault();
         }
+
+        public override PageResponse<User> GetPage(Pager pager)
+        {
+            var query = ModelContext.Users.Where(x => (x.Deleted == false)).OrderBy(x => x.Id);
+
+            return new PageResponse<User>(query.Skip(pager.Page).Take(pager.PerPage).ToList(), query.Count());
+        }
     }
 }
