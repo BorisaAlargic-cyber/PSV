@@ -21,6 +21,10 @@ import { TokenService } from './services/tokenService';
 import { FeedBackService } from './services/feedbackService';
 import { TokenInterceptor } from './services/tokenInterceptor';
 import { UserListComponent } from './user-list/user-list.component';
+import { VisitComponent } from './visit/visit.component';
+import { VisitService } from './services/visitService';
+import { DrugListComponent } from './drug-list/drug-list.component';
+import { DrugService } from './services/drugService';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,8 @@ import { UserListComponent } from './user-list/user-list.component';
     FeedbackComponent,
     AddFeedbackComponent,
     UserListComponent,
+    VisitComponent,
+    DrugListComponent,
     
   ],
   imports: [
@@ -43,7 +49,7 @@ import { UserListComponent } from './user-list/user-list.component';
     MatTableModule,
     HttpClientModule
   ],
-  providers: [UserService, TokenService, FeedBackService,
+  providers: [UserService, TokenService, FeedBackService, VisitService,DrugService,
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]

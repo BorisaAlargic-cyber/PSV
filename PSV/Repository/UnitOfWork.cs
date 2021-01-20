@@ -19,6 +19,9 @@ namespace PSV.Repository
             Feedback = new FeedbackRepository(this.context);
             Instruction = new InstructionRepository(this.context);
             Termin = new TerminRepository(this.context);
+            Visits = new VisitRepository(this.context);
+            Drugs = new DrugRepository(this.context);
+            Recepie = new RecepieRepository(this.context);
 
         }
         public IUserRepository Users { get; private set; }
@@ -26,6 +29,9 @@ namespace PSV.Repository
         public IFeedbackRepository Feedback { get; private set; }
         public IInstructionRepository Instruction { get; private set; }
         public ITerminRepository Termin { get; private set; }
+        public IVisitRepository Visits { get; private set; }
+        public IDrugRepository Drugs { get; private set; }
+        public IRecepieRepository Recepie { get; private set; }
 
         public ModelContext Context
         {

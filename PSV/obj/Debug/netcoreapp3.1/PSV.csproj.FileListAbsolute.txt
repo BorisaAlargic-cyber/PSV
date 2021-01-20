@@ -73,3 +73,5 @@ C:\Users\Borisa\Desktop\PSV\PSV\bin\Debug\netcoreapp3.1\Microsoft.EntityFramewor
 C:\Users\Borisa\Desktop\PSV\PSV\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Borisa\Desktop\PSV\PSV\obj\Debug\netcoreapp3.1\PSV.Migrations.Key.resources
 C:\Users\Borisa\Desktop\PSV\PSV\obj\Debug\netcoreapp3.1\PSV.csproj.GenerateResource.cache
+C:\Users\Borisa\Desktop\PSV\PSV\obj\Debug\netcoreapp3.1\PSV.Migrations.Visit.resources
+C:\Users\Borisa\Desktop\PSV\PSV\obj\Debug\netcoreapp3.1\PSV.Migrations.VisitChange.resources

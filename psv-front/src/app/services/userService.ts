@@ -22,10 +22,10 @@ export class UserService {
     }
     
     blockUser(email){
-        return this.http.post(this.baseUrl + '/api/users/block/' + email);
+        return this.http.post(this.baseUrl + '/api/users/block/' + email, {});
     }
 
     unBlockUser(email){
-        return this.http.post(this.baseUrl + '/api/users/unblock/' + email);
+        return this.http.post(this.baseUrl + '/api/users/unblock/' + email, {});
     }
 }

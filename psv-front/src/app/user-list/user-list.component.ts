@@ -28,7 +28,6 @@ export class UserListComponent implements OnInit {
       console.log(data)
       this.elements = data['entities'];
       console.log(data);
-      
     });
 
   }
