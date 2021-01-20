@@ -71,6 +71,35 @@ namespace PSV.Controllers
 
             return Ok();
         }
+        [Route("/api/drugs/add")]
+        [HttpPost]
+        public async Task<IActionResult> AddDrug(Drugs input)
+        {
+            Drugs drug = null;
+
+            if (input.Name == null)
+            {
+                return BadRequest();
+            }
+
+            drug = new Drugs();
+            drug.Name = input.Name;
+           try
+           {
+                using (var unitOfWork = new UnitOfWork(new ModelContext()))
+                {
+                    unitOfWork.Drugs.Add(drug);
+                    unitOfWork.Complete();
+                }
+            }
+            catch (Exception e)
+            {
+                return BadRequest();
+            }
+            return Ok(drug);
+        }
+
+
 
     }
 }

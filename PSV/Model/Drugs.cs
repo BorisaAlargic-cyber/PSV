@@ -7,6 +7,6 @@ namespace PSV.Model
 {
     public class Drugs : BaseModel
     {
-        public String name;
+        public String Name;
     }
 }

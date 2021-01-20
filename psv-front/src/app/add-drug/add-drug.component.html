@@ -1,0 +1,21 @@
+<div id="add-drug-page" class="page">
+    <div class="form-container">
+        <mat-card>
+            <h1>Drug</h1>
+            <form [formGroup]="addDrugForm" (submit)="submit()">
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label> Name of drug
+                    </mat-label>
+                    <input matInput formControlName="name" required>
+                    <mat-error *ngIf="addDrugForm.controls.name.touched && addDrugForm.controls.comment.invalid">
+                    <span *ngIf="addDrugForm.controls.name.errors.required">This field is mandatory.</span>
+                    <span *ngIf="addDrugForm.controls.name.errors.pattern">This field is invalid.</span>
+                    </mat-error>
+                </mat-form-field>          
+            </form>
+            <mat-card-actions>
+                <button mat-raised-button type="submit" color="primary" (click)="submit()">ADD DRUG</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

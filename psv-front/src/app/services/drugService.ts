@@ -15,4 +15,7 @@ export class DrugService
     deleteDrug(id){
         return this.http.delete(this.baseUrl + '/api/drugs/delete/' + id , {});
     }
+    addDrug(data){
+        return this.http.post(this.baseUrl + '/api/drugs/add' ,data);
+    }
 }

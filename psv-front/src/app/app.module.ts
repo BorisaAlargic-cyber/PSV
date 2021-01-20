@@ -25,6 +25,7 @@ import { VisitComponent } from './visit/visit.component';
 import { VisitService } from './services/visitService';
 import { DrugListComponent } from './drug-list/drug-list.component';
 import { DrugService } from './services/drugService';
+import { AddDrugComponent } from './add-drug/add-drug.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { DrugService } from './services/drugService';
     UserListComponent,
     VisitComponent,
     DrugListComponent,
+    AddDrugComponent,
     
   ],
   imports: [
