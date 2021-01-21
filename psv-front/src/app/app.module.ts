@@ -26,6 +26,10 @@ import { VisitService } from './services/visitService';
 import { DrugListComponent } from './drug-list/drug-list.component';
 import { DrugService } from './services/drugService';
 import { AddDrugComponent } from './add-drug/add-drug.component';
+import { AddApointmentComponent } from './add-apointment/add-apointment.component';
+import { NgxMatDatetimePickerModule, NgxMatTimepickerModule,
+   NgxMatNativeDateModule } from '@angular-material-components/datetime-picker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -38,6 +42,7 @@ import { AddDrugComponent } from './add-drug/add-drug.component';
     VisitComponent,
     DrugListComponent,
     AddDrugComponent,
+    AddApointmentComponent,
     
   ],
   imports: [
@@ -49,7 +54,9 @@ import { AddDrugComponent } from './add-drug/add-drug.component';
     MatButtonModule, MatFormFieldModule, MatInputModule,
     MatCardModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,MatDatepickerModule, NgxMatNativeDateModule
   ],
   providers: [UserService, TokenService, FeedBackService, VisitService,DrugService,
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },

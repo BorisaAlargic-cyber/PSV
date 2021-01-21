@@ -16,7 +16,8 @@ export class AddDrugComponent implements OnInit {
 
   ngOnInit(): void {
     this.addDrugForm = this.formBuilder.group({
-      name: [null, Validators.required]
+      name: [null, Validators.required],
+      quantity: [null, Validators.required]
     });
   }
 
@@ -26,7 +27,10 @@ export class AddDrugComponent implements OnInit {
       return;
     }
 
-    this.drugService.addDrug(this.addDrugForm.value).subscribe(data => {
+    this.drugService.addDrug({
+      name: this.addDrugForm.value.name,
+      quantity: parseInt(this.addDrugForm.value.quantity)
+    }).subscribe(data => {
       
       this.router.navigate(['/drugs']);
     });

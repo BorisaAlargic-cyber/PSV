@@ -15,7 +15,6 @@ namespace PSV.Model
         public DbSet<Apointment> Apointments { get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }
         public DbSet<Instruction> Instructions { get; set; }
-        public DbSet<Termin> Termins { get; set; }
         public DbSet<Visit> Visits { get; set; }
         public DbSet<Drugs> Drugs { get; set; }
         public DbSet<Recepie> Recepie { get; set; }

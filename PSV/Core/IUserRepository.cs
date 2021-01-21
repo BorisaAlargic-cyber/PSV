@@ -12,5 +12,7 @@ namespace PSV.Core
         public User GetUserWithEmail(string email);
 
         public User GetUserWithEmailAndPassword(string email, string password);
+
+        public List<User> GetDoctors();
     }
 }

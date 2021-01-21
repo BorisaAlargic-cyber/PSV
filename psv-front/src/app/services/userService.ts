@@ -20,6 +20,10 @@ export class UserService {
     getAllUsers(){
         return this.http.get(this.baseUrl + '/api/users/get-all');
     }
+
+    getDoctors(){
+        return this.http.get(this.baseUrl + '/api/users/get-doctors');
+    }
     
     blockUser(email){
         return this.http.post(this.baseUrl + '/api/users/block/' + email, {});

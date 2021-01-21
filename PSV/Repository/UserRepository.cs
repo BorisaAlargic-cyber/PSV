@@ -27,5 +27,12 @@ namespace PSV.Repository
 
             return new PageResponse<User>(query.Skip(pager.Page).Take(pager.PerPage).ToList(), query.Count());
         }
+
+        public List<User> GetDoctors()
+        {
+            var query = ModelContext.Users.Where(x => x.Deleted == false && x.Role == "DOCTOR").OrderBy(x => x.Id);
+
+            return query.ToList();
+        }
     }
 }

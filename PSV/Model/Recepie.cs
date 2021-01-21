@@ -7,9 +7,9 @@ namespace PSV.Model
 {
     public class Recepie : BaseModel
     {
-        public User Pacient;
-        public User Doctor;
-        public Drugs Drug;
-        public int quantity;
+        public User Pacient { get; set; }
+        public User Doctor { get; set; }
+        public Drugs Drug { get; set; }
+        public int Quantity { get; set; }
     }
 }

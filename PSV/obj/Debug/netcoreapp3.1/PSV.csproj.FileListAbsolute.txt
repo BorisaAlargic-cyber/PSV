@@ -75,3 +75,8 @@ C:\Users\Borisa\Desktop\PSV\PSV\obj\Debug\netcoreapp3.1\PSV.Migrations.Key.resou
 C:\Users\Borisa\Desktop\PSV\PSV\obj\Debug\netcoreapp3.1\PSV.csproj.GenerateResource.cache
 C:\Users\Borisa\Desktop\PSV\PSV\obj\Debug\netcoreapp3.1\PSV.Migrations.Visit.resources
 C:\Users\Borisa\Desktop\PSV\PSV\obj\Debug\netcoreapp3.1\PSV.Migrations.VisitChange.resources
+C:\Users\Borisa\Desktop\PSV\PSV\obj\Debug\netcoreapp3.1\PSV.Migrations.Medicine.resources
+C:\Users\Borisa\Desktop\PSV\PSV\obj\Debug\netcoreapp3.1\PSV.Migrations.Medicine1.resources
+C:\Users\Borisa\Desktop\PSV\PSV\obj\Debug\netcoreapp3.1\PSV.Migrations.Medicine2.resources
+C:\Users\Borisa\Desktop\PSV\PSV\obj\Debug\netcoreapp3.1\PSV.Migrations.Medicine3.resources
+C:\Users\Borisa\Desktop\PSV\PSV\obj\Debug\netcoreapp3.1\PSV.Migrations.Medicine4.resources

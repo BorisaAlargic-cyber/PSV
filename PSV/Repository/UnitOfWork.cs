@@ -18,7 +18,6 @@ namespace PSV.Repository
             Apointment = new ApointmentRepository(this.context);
             Feedback = new FeedbackRepository(this.context);
             Instruction = new InstructionRepository(this.context);
-            Termin = new TerminRepository(this.context);
             Visits = new VisitRepository(this.context);
             Drugs = new DrugRepository(this.context);
             Recepie = new RecepieRepository(this.context);
@@ -28,7 +27,7 @@ namespace PSV.Repository
         public IApointmentRepository Apointment { get; private set; }
         public IFeedbackRepository Feedback { get; private set; }
         public IInstructionRepository Instruction { get; private set; }
-        public ITerminRepository Termin { get; private set; }
+
         public IVisitRepository Visits { get; private set; }
         public IDrugRepository Drugs { get; private set; }
         public IRecepieRepository Recepie { get; private set; }

@@ -99,6 +99,24 @@ namespace PSV.Controllers
             }
         }
 
+        [Authorize]
+        [Route("/api/users/get-doctors")]
+        [HttpGet]
+        public async Task<IActionResult> GetDoctors()
+        {
+            try
+            {
+                using (var unitOfWork = new UnitOfWork(new ModelContext()))
+                {
+                    return Ok(unitOfWork.Users.GetDoctors());
+                }
+            }
+            catch (Exception e)
+            {
+                return BadRequest();
+            }
+        }
+
 
         [Authorize]
         [Route("/api/users/get-current")]

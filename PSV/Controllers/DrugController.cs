@@ -55,6 +55,7 @@ namespace PSV.Controllers
         [HttpDelete]
         public async Task<IActionResult> DeleteById(int id)
         {
+           
             try
             {
                 using (var unitOfWork = new UnitOfWork(new ModelContext()))
@@ -62,6 +63,7 @@ namespace PSV.Controllers
                     Drugs drug;
                     drug = unitOfWork.Drugs.GetDrugById(id);
                     drug.Deleted = true;
+                    unitOfWork.Complete();
                 }
 
             }catch(Exception e)
