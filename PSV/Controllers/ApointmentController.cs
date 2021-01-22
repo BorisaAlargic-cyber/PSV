@@ -56,6 +56,59 @@ namespace PSV.Controllers
             return Ok(apointment);
         }
 
+        [Route("/api/apointment/leave/{id}")]
+        [HttpPut]
+
+        public async Task<IActionResult> leaveApointment(int id)
+        {
+            Apointment apointment = null;
+            try
+            {
+                using (var unitOfWork = new UnitOfWork(new ModelContext()))
+                {
+                    apointment = unitOfWork.Apointment.Get(id);
+                    apointment.Taken = false;
+                    apointment.Patient = null;
+                    unitOfWork.Apointment.Update(apointment);
+                    unitOfWork.Complete();
+                }
+            }
+            catch (Exception e)
+            {
+                return BadRequest();
+            }
+
+            return Ok(apointment);
+        }
+
+        [Route("/api/apointment/take/{id}")]
+        [HttpPut]
+        public async Task<IActionResult> takeApointment(int id)
+        {
+            Apointment apointment = null;
+            User user = GetCurrentUser();
+            try
+            {
+                using (var unitOfWork = new UnitOfWork(new ModelContext()))
+                {
+                    
+                    apointment = unitOfWork.Apointment.Get(id);
+                    apointment.Patient = unitOfWork.Users.Get(user.Id);
+                    apointment.Taken = true;
+                    unitOfWork.Apointment.Update(apointment);
+                    unitOfWork.Complete();
+                }
+            }
+            catch (Exception e)
+            {
+                return BadRequest();
+            }
+
+            return Ok(apointment);
+        }
+
+
+
 
     }
 }

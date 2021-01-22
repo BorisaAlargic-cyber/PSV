@@ -16,6 +16,13 @@ export class ApointmentService
        return this.http.post(this.baseUrl + '/api/apointment/add',input);
     }
 
+    takeApointment(id){
+       return this.http.put(this.baseUrl + '/api/apointment/take/'+ id ,{});
+    }
+    leaveApointment(id){
+       return this.http.put(this.baseUrl + '/api/apointment/leave/' + id, {});
+    }
+
 
 
 
