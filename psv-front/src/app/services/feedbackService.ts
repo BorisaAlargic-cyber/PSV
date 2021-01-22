@@ -20,7 +20,7 @@ export class FeedBackService
     }
 
     getPublishedFeedback () {
-        return this.http.get(this.baseUrl + '/api/feedbacks/all-published');
+        return this.http.get(this.baseUrl + '/api/feedbacks/all-pubished');
 
     }
 

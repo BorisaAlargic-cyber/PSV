@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApointmentService } from '../services/apointmentService';
 import { UserService } from '../services/userService';
-import { ApointmentService} from '../services/apointmentService';
+
 
 @Component({
   selector: 'app-add-apointment',
@@ -13,12 +14,12 @@ export class AddApointmentComponent implements OnInit {
   addAppointmentForm : FormGroup;
   doctors;
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService , private apointmentService : ApointmentService) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService ,private apointmentService : ApointmentService) { }
 
   ngOnInit(): void {
     this.addAppointmentForm = this.formBuilder.group({
-      date: [null, Validators.required]
-      
+      date: [null, Validators.required],
+      doctor: [null, Validators.required],
     });
 
     this.doctors = [];
@@ -32,6 +33,18 @@ export class AddApointmentComponent implements OnInit {
 
 
 
-  submit() {}
+  submit() {
+
+    if (!this.addAppointmentForm.valid) {
+      return;
+    }
+
+    this.apointmentService.addApointment({
+      doctor: { id: this.addAppointmentForm.value.doctor} ,
+      date: this.addAppointmentForm.value.date,
+    }).subscribe(data => {
+      
+    });
+  }
 
 }

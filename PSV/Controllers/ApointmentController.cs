@@ -14,7 +14,7 @@ namespace PSV.Controllers
     public class ApointmentController : DefaultController
     {
         [Authorize]
-        [Route("/api/apointment/getApointment")]
+        [Route("/api/apointment/pointment-all")]
         [HttpGet]
         public PageResponse<Apointment> GetAll([FromQuery(Name = "page")] int page, [FromQuery(Name = "perPage")] int perPage, [FromQuery(Name = "search")] string search)
         {
@@ -38,12 +38,13 @@ namespace PSV.Controllers
 
             apointment = new Apointment();
             apointment.Date = input.Date;
-            User user = GetCurrentUser();
-            apointment.Patient = user;
+
             try
             {
                 using (var unitOfWork = new UnitOfWork(new ModelContext()))
                 {
+                    apointment.Doctor = unitOfWork.Users.Get(input.Doctor.Id);
+
                     unitOfWork.Apointment.Add(apointment);
                     unitOfWork.Complete();
                 }

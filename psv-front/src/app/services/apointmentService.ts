@@ -3,17 +3,17 @@ import { HttpClient } from '@angular/common/http';
 
 
 @Injectable()
-export class DrugService
+export class ApointmentService
 {
     baseUrl = 'https://localhost:44308';
 
     constructor(private http: HttpClient) { }
 
     getApointment(){
-        this.http.get(this.baseUrl + '/api/users/getApointment');
+       return this.http.get(this.baseUrl + '/api/apointment/pointment-all');
     }
     addApointment(input){
-        this.http.post(this.baseUrl + '/api/apointment/add',input);
+       return this.http.post(this.baseUrl + '/api/apointment/add',input);
     }
 
 
